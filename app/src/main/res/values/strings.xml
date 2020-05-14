@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">NeedsAssesment</string>
+
+    <string-array name="genders_array">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="employment_array">
+        <item>Unemployed</item>
+        <item>Self Employed</item>
+        <item>Private Sector</item>
+        <item>Government Sector</item>
+    </string-array>
+
+    <string-array name="mandal_array">
+        <item>Mandal 1</item>
+        <item>Mandal 2</item>
+        <item>Mandal 3</item>
+        <item>Mandal 4</item>
+    </string-array>
+
+
+    <string-array name="panchayat_array">
+        <item>Panchayat 1</item>
+        <item>Panchayat 2</item>
+        <item>Panchayat 3</item>
+    </string-array>
+
+    <string-array name="country_codes_array">
+        <item>+91</item>
+    </string-array>
+
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_sed_do_eiusmod_tempor_incididunt_ut_labore_et_dolore_magna_aliqua_ut_enim_ad_minim_veniam_quis_nostrud_exercitation_ullamco_laboris_nisi_ut_aliquip_ex_ea_commodo_consequat">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="continue_text">Continue</string>
+    <string name="otp">OTP</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="do_you_suffer_covid_19_symptoms">Do you suffer COVID-19 Symptoms?</string>
+    <string name="do_you_face_food_shortage">Do you face food shortage?</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="do_you_have_face_shield">Do you have Face shield?</string>
+    <string name="add_identity_proof">Add Identity Proof</string>
+    <string name="aadhar_card_pan_card_passport">(Aadhar card, PAN card, Passport)</string>
+    <string name="identity_proof">Identity Proof:</string>
+    <string name="do_you_have_a_vehicle">Do you have a vehicle?</string>
+    <string name="do_you_have_permit">Do you have permit?</string>
+    <string name="designation">Designation</string>
+    <string name="field_work_area">Field Work Area</string>
+    <string name="organisation">Organisation</string>
+    <string name="pin_code">Pin code</string>
+    <string name="residence_address">Residence Address</string>
+    <string name="email">Email</string>
+    <string name="age">age</string>
+    <string name="volunteer_name">Volunteer Name</string>
+    <string name="choose_from_gallery">Choose From Gallery</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="choose_source">Choose source...</string>
+    <string name="selected">Selected</string>
+    <string name="no_file_selected">No File Selected</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="beneficiary_name">Beneficiary Name</string>
+    <string name="ward">Ward</string>
+    <string name="family_members">Family Members:</string>
+    <string name="add_member">Add Member</string>
+    <string name="home">Home</string>
+    <string name="tasks">Tasks</string>
+    <string name="beneficiaries">Beneficiaries</string>
+    <string name="my_profile">My Profile</string>
+    <string name="finish">Finish</string>
+    <string name="congratulations_your_phone_number_has_been_verified">Congratulations! Your phone number has been verified!</string>
+    <string name="verified">Verified!</string>
+    <string name="finish_registration">Finish Registration</string>
+    <string name="start_writing_text_here">Start writing text here...</string>
+    <string name="add_beneficiary">Add Beneficiary</string>
+    <string name="tasks_done">Tasks Done:</string>
+    <string name="needs_description">Needs Description:</string>
+    <string name="recipient_of_any_scheme_relief">Recipient of any Scheme/Relief</string>
+    <string name="pending">Pending</string>
+    <string name="completed">Completed</string>
+    <string name="attempt">Attempt</string>
+    <string name="hello">Hello,</string>
+    <string name="description">Description</string>
+    <string name="task_details">Task Details</string>
+    <string name="task_token_id">Task Token ID</string>
+    <string name="task_status">Task Status</string>
+    <string name="title">Title</string>
+    <string name="beneficiary_tasks_involved">Beneficiary Tasks Involved:</string>
+    <string name="volunteer_registration">Volunteer Registration</string>
+    <string name="step">Step</string>
+    <string name="loading_beneficiaries_nplease_wait">Loading beneficiaries...\nPlease wait.</string>
+    <string name="no_beneficiaries_found">No beneficiaries found!</string>
+    <string name="you_can_add_beneficiaries_by_clicking_on_button_on_the_bottom_right">You can add beneficiaries by clicking on + button on the bottom right.</string>
+    <string name="loading_completed_tasks_nplease_wait">Loading completed tasks...\nPlease wait...</string>
+    <string name="otp_not_received">OTP not received?</string>
+    <string name="please_enter_the_otp_sent_to_your_phone_to_continue_the_verification_process">Please enter the OTP sent to your phone to continue the verification process.</string>
+    <string name="otp_sent">OTP Sent!</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="cheers_you_don_t_have_any_pending_tasks">Cheers! You don\'t have any pending tasks.</string>
+    <string name="loading_pending_tasks_nplease_wait">Loading pending tasks...\nPlease wait...</string>
+    <string name="address">Address</string>
+</resources>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+        <variable
+            name="viewmodel"
+            type="in.sunfox.needs.assesment.authentication.AuthenticationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".authentication.EnterOtpFragment">
+
+        <EditText
+            android:id="@+id/fragment_enter_otp_edittext_otp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Enter 6-digit OTP"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:itemBackground="@color/colorBackgroundGrey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.63"
+            app:inputType="number"
+            android:background="@drawable/background_rounded_grey"
+            android:text="@={viewmodel.otp}" />
+
+        <Button
+            android:visibility="@{viewmodel.otp.length()==6?View.VISIBLE:View.GONE}"
+            style="@style/BottomBlueButton"
+            android:id="@+id/fragment_enter_otp_btn_continue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->viewmodel.verifyOtp()}"
+            android:text="@string/continue_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:textColor="@color/colorAppGreen"
+            android:fontFamily="@font/montserrat"
+            android:id="@+id/fragment_enter_otp_textview_resent_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:onClick="@{()->viewmodel.resendSms()}"
+            android:text="@string/resend_otp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView24"
+            app:layout_constraintStart_toEndOf="@+id/textView24"
+            app:layout_constraintTop_toTopOf="@+id/textView24" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView25"
+            app:layout_constraintStart_toStartOf="@+id/textView25"
+            app:srcCompat="@drawable/img_tick" />
+
+        <TextView
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/montserrat"
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/otp_not_received"
+            app:layout_constraintStart_toStartOf="@+id/fragment_enter_otp_edittext_otp"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_enter_otp_edittext_otp" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="80dp"
+            android:text="@string/please_enter_the_otp_sent_to_your_phone_to_continue_the_verification_process"
+            android:textColor="#666"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_enter_otp_edittext_otp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/otp_sent"
+            android:textColor="@android:color/black"
+            android:textSize="32sp"
+            android:id="@+id/textView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

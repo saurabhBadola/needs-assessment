@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/colorAppBlue</color>
+    <color name="colorPrimaryDark">@color/colorAppDark</color>
+    <color name="colorAccent">@color/colorAppGreen</color>
+
+    <color name="colorAppWhite">#F0F3F5</color>
+    <color name="colorAppDarkBlue">#0A2463</color>
+    <color name="colorAppVeryLightBlue">#0A246322</color>
+    <color name="colorAppLightBlue">#247BA0</color>
+    <color name="colorAppMaroon">#CE5259</color>
+    <color name="colorAppMaroonDark">#BD3C43</color>
+    <color name="colorAppBlack">#000</color>
+    <color name="colorAppBlackLight">#333</color>
+
+
+    <color name="colorAppGreen">#66E9E3</color>
+    <color name="colorAppBlue">#1A7EF6</color>
+    <color name="colorAppDark">#17234D</color>
+    <color name="colorAppLight">#F6FAFB</color>
+    <color name="colorBackgroundGrey">#f4f4f4</color>
+
+    <color name="colorThemePending">#FFC600</color>
+    <color name="colorThemeSuccess">#9CEC5B</color>
+</resources>

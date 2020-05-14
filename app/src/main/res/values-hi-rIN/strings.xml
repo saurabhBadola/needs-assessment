@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="country_codes_array">
+        <item>+91</item>
+    </string-array>
+    <string name="continue_text">आगे बढ़ें</string>
+    <string name="otp">OTP</string>
+    <string name="resend_otp">OTP पुनः भेजें</string>
+    <string name="yes">हाँ</string>
+    <string name="no">नहीं</string>
+    <string name="do_you_suffer_covid_19_symptoms">क्या आप COVID-19 लक्षणों से पीड़ित हैं?</string>
+    <string name="do_you_face_food_shortage">क्या आप भोजन की कमी का सामना करते हैं?</string>
+    <string name="add_photo">तस्वीर जोड़ें </string>
+    <string name="do_you_have_face_shield">क्या आपके पास फेस मास्क है?</string>
+    <string name="add_identity_proof">पहचान प्रमाण जोड़ें</string>
+    <string name="aadhar_card_pan_card_passport">(आधार कार्ड, पैन कार्ड, पासपोर्ट)</string>
+    <string name="identity_proof">पहचान प्रमाण:</string>
+    <string name="do_you_have_a_vehicle">क्या आपके पास वाहन है?</string>
+    <string name="do_you_have_permit">क्या आपके पास परमिट है?</string>
+    <string name="designation">पद</string>
+    <string name="field_work_area">कार्यक्षेत्र</string>
+    <string name="organisation">संगठन</string>
+    <string name="pin_code">पिन कोड</string>
+    <string name="residence_address">निवास का पता</string>
+    <string name="email">ई-मेल</string>
+    <string name="age">आयु</string>
+    <string name="volunteer_name">स्वयंसेवक का नाम</string>
+    <string name="choose_from_gallery">गैलरी से चयन करें</string>
+    <string name="open_camera">कैमरा खोलें</string>
+    <string name="choose_source">स्रोत चुनें...</string>
+    <string name="selected">चुन लिया</string>
+    <string name="no_file_selected">किसी भी फाइल का चयन नहीं</string>
+    <string name="phone_number">फ़ोन नंबर</string>
+    <string name="beneficiary_name">लाभार्थी का नाम</string>
+    <string name="ward">मुहल्ला</string>
+    <string name="family_members">परिवार के सदस्य:</string>
+    <string name="add_member">सदस्य जोड़ें</string>
+    <string name="home">होम</string>
+    <string name="tasks">कार्य</string>
+    <string name="beneficiaries">लाभार्थी</string>
+    <string name="my_profile">मेरी प्रोफाइल</string>
+    <string name="finish">पूरा करें</string>
+    <string name="congratulations_your_phone_number_has_been_verified">बधाई हो! आपका फ़ोन नंबर सत्यापित हो गया है!</string>
+    <string name="verified">सत्यापित!</string>
+    <string name="finish_registration">पंजीकरण पूरा करें</string>
+    <string name="start_writing_text_here">यहां टेक्स्ट लिखना शुरू करें...</string>
+    <string name="add_beneficiary">लाभार्थी जोड़ें</string>
+    <string name="tasks_done">कार्य किए गए:</string>
+    <string name="needs_description">जरूरतों का विवरण:</string>
+    <string name="recipient_of_any_scheme_relief">किसी भी योजना / राहत के प्राप्तकर्ता:</string>
+    <string name="pending">अपूर्ण</string>
+    <string name="completed">पूर्ण</string>
+    <string name="attempt">पूरा करें</string>
+    <string name="hello">नमस्ते,</string>
+    <string name="description">विवरण</string>
+    <string name="task_details">कार्य विवरण</string>
+    <string name="task_token_id">कार्य टोकन ID:</string>
+    <string name="task_status">कार्य की स्थिति</string>
+    <string name="title">शीर्षक</string>
+    <string name="beneficiary_tasks_involved">सम्मिलित लाभार्थी कार्य:</string>
+    <string name="volunteer_registration">स्वयंसेवक पंजीकरण</string>
+    <string name="step">Step</string>
+    <string name="loading_beneficiaries_nplease_wait">लाभार्थियों की सूची लोड हो रही है...\nकृपया प्रतीक्षा करें.</string>
+    <string name="no_beneficiaries_found">कोई लाभार्थी नहीं मिला!</string>
+    <string name="you_can_add_beneficiaries_by_clicking_on_button_on_the_bottom_right">आप नीचे दाईं ओर + बटन पर क्लिक करके लाभार्थियों को जोड़ सकते हैं.</string>
+    <string name="loading_completed_tasks_nplease_wait">पूर्ण किए गए कार्य लोड हो रहे हैं...\nकृपया प्रतीक्षा करें...</string>
+    <string name="otp_not_received">OTP प्राप्त नहीं हुआ?</string>
+    <string name="please_enter_the_otp_sent_to_your_phone_to_continue_the_verification_process">सत्यापन प्रक्रिया जारी रखने के लिए कृपया अपने फ़ोन नंबर पर भेजे गए ओटीपी को दर्ज करें.</string>
+    <string name="otp_sent">OTP भेजा गया!</string>
+    <string name="enter_phone_number">फोन नंबर डालें</string>
+    <string name="cheers_you_don_t_have_any_pending_tasks">चीयर्स! आपके पास कोई लंबित कार्य नहीं है.</string>
+    <string name="loading_pending_tasks_nplease_wait">अपूर्ण कार्य की सूची लोड हो रही है...\nकृपया प्रतीक्षा करें...</string>
+    <string name="address">पता</string>
+</resources>

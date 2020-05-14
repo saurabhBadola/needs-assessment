@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="in.sunfox.needs.assesment.volunteer_registration.RegistrationViewModel" />
+
+        <variable
+            name="viewModel"
+            type="in.sunfox.needs.assesment.volunteer_registration.RegistrationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        tools:context=".volunteer_registration.EnterVolunteerDetailsTwoFragment">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/BlackTextStyle16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/do_you_have_permit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/fragment_enter_volunteer_details_radio_group_permit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/fragment_enter_volunteer_details_radio_btn_permit_yes"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+            <RadioButton
+                android:id="@+id/fragment_enter_volunteer_details_radio_btn_permit_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.volunteer.permitData.hasData}"
+                android:onClick="@{()->viewModel.setBooleanForField(RegistrationViewModel.BooleanAnswerField.PERMIT,true)}"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/fragment_enter_volunteer_details_radio_btn_permit_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{!viewModel.volunteer.permitData.hasData}"
+                android:onClick="@{()->viewModel.setBooleanForField(RegistrationViewModel.BooleanAnswerField.PERMIT,false)}"
+                android:text="@string/no" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView3"
+
+            style="@style/BlackTextStyle16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/do_you_have_a_vehicle"
+            app:layout_constraintStart_toStartOf="@+id/fragment_enter_volunteer_details_radio_group_permit"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_enter_volunteer_details_radio_group_permit" />
+
+
+        <RadioGroup
+            android:id="@+id/fragment_enter_volunteer_details_radio_group_vehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+            <RadioButton
+                android:id="@+id/fragment_enter_volunteer_details_radio_btn_vehicle_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.volunteer.hasVehicle}"
+                android:onClick="@{()->viewModel.setBooleanForField(RegistrationViewModel.BooleanAnswerField.VEHICLE,true)}"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/fragment_enter_volunteer_details_radio_btn_vehicle_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{!viewModel.volunteer.hasVehicle}"
+                android:onClick="@{()->viewModel.setBooleanForField(RegistrationViewModel.BooleanAnswerField.VEHICLE,false)}"
+                android:text="@string/no" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/BlackTextStyle16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/identity_proof"
+            app:layout_constraintStart_toStartOf="@+id/fragment_enter_volunteer_details_radio_group_vehicle"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_enter_volunteer_details_radio_group_vehicle" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/aadhar_card_pan_card_passport"
+            android:textColor="#888"
+            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+        <Button
+            android:id="@+id/fragment_enter_volunteer_details_two_btn_add_id_proof_photo"
+            style="@style/AccentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="@{()->viewModel.dispatchChooseImageSourceDialog(RegistrationViewModel.CurrentSelectingImageCategory.IDENTITY)}"
+            android:text="@string/add_identity_proof"
+            app:layout_constraintStart_toStartOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/textView7"
+            style="@style/BlackTextStyle16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/do_you_have_face_shield"
+            app:layout_constraintStart_toStartOf="@+id/fragment_enter_volunteer_details_two_btn_add_id_proof_photo"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_enter_volunteer_details_two_btn_add_id_proof_photo" />
+
+        <RadioGroup
+            android:id="@+id/fragment_enter_volunteer_details_radio_group_face_shield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/textView7"
+            app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+            <RadioButton
+                android:id="@+id/fragment_enter_volunteer_details_radio_btn_face_shield_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.volunteer.faceShieldData.hasData}"
+                android:onClick="@{()->viewModel.setBooleanForField(RegistrationViewModel.BooleanAnswerField.FACE_MASK,true)}"
+                android:text="@string/yes"
+                app:layout_constraintStart_toStartOf="@+id/textView7"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <RadioButton
+                android:id="@+id/fragment_enter_volunteer_details_radio_btn_face_shield_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{!viewModel.volunteer.faceShieldData.hasData}"
+                android:onClick="@{()->viewModel.setBooleanForField(RegistrationViewModel.BooleanAnswerField.FACE_MASK,false)}"
+                android:text="@string/no"
+                app:layout_constraintStart_toStartOf="@+id/fragment_enter_volunteer_details_radio_btn_face_shield_yes"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_enter_volunteer_details_radio_btn_face_shield_yes" />
+
+        </RadioGroup>
+
+
+        <Button
+            android:id="@+id/fragment_enter_volunteer_details_two_btn_add_permit_photo"
+            style="@style/AccentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{()->viewModel.dispatchChooseImageSourceDialog(RegistrationViewModel.CurrentSelectingImageCategory.PERMIT)}"
+            android:text="@string/add_photo"
+            android:visibility="@{((viewModel.localPathToPermitSelectedImage==null || viewModel.localPathToPermitSelectedImage.isEmpty()) &amp;&amp; viewModel.volunteer.permitData.hasData )?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_enter_volunteer_details_radio_group_permit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fragment_enter_volunteer_details_radio_group_permit"
+            tools:visibility="invisible" />
+
+        <Button
+            android:id="@+id/fragment_enter_volunteer_details_two_btn_add_face_shield_photo"
+
+            style="@style/AccentButton"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{()->viewModel.dispatchChooseImageSourceDialog(RegistrationViewModel.CurrentSelectingImageCategory.FACE_MASK)}"
+            android:text="@string/add_photo"
+            android:visibility="@{((viewModel.localPathToFaceMaskSelectedImage==null || viewModel.localPathToFaceMaskSelectedImage.isEmpty()) &amp;&amp; viewModel.volunteer.faceShieldData.hasData)?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_enter_volunteer_details_radio_group_face_shield"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fragment_enter_volunteer_details_radio_group_face_shield"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView8"
+            style="@style/BlackTextStyle16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/do_you_face_food_shortage"
+            app:layout_constraintStart_toStartOf="@+id/fragment_enter_volunteer_details_radio_group_face_shield"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_enter_volunteer_details_radio_group_face_shield" />
+
+        <RadioGroup
+            android:id="@+id/fragment_enter_volunteer_details_radio_group_food_shortage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+
+            <RadioButton
+                android:id="@+id/fragment_enter_volunteer_details_radio_btn_food_shortage_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.volunteer.hasFoodShortage}"
+                android:onClick="@{()->viewModel.setBooleanForField(RegistrationViewModel.BooleanAnswerField.FOOD_SHORTAGE,true)}"
+                android:text="@string/yes"
+                app:layout_constraintStart_toStartOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <RadioButton
+                android:id="@+id/fragment_enter_volunteer_details_radio_btn_food_shortage_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{!viewModel.volunteer.hasFoodShortage}"
+                android:onClick="@{()->viewModel.setBooleanForField(RegistrationViewModel.BooleanAnswerField.FOOD_SHORTAGE,false)}"
+                android:text="@string/no"
+                app:layout_constraintStart_toStartOf="@+id/fragment_enter_volunteer_details_radio_btn_food_shortage_yes"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_enter_volunteer_details_radio_btn_food_shortage_yes" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView9"
+            style="@style/BlackTextStyle16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/do_you_suffer_covid_19_symptoms"
+            app:layout_constraintStart_toStartOf="@+id/fragment_enter_volunteer_details_radio_group_food_shortage"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_enter_volunteer_details_radio_group_food_shortage" />
+
+        <RadioGroup
+            android:id="@+id/fragment_enter_volunteer_details_radio_group_covid19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+
+            <RadioButton
+                android:id="@+id/fragment_enter_volunteer_details_radio_btn_covid19_symptoms_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.volunteer.hasCovid19Symptoms}"
+                android:onClick="@{()->viewModel.setBooleanForField(RegistrationViewModel.BooleanAnswerField.COVID_19_SYMPTOMS,true)}"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/fragment_enter_volunteer_details_radio_btn_covid19_symptoms_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{!viewModel.volunteer.hasCovid19Symptoms}"
+                android:onClick="@{()->viewModel.setBooleanForField(RegistrationViewModel.BooleanAnswerField.COVID_19_SYMPTOMS,false)}"
+                android:text="@string/no" />
+        </RadioGroup>
+
+        <TextView
+
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background_rounded_grey"
+            android:fontFamily="@font/montserrat"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/selected"
+            android:textColor="@android:color/black"
+            android:visibility="@{ (viewModel.volunteer.permitData.hasData &amp;&amp; (viewModel.localPathToPermitSelectedImage!=null &amp;&amp; !viewModel.localPathToPermitSelectedImage.isEmpty()))?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_enter_volunteer_details_radio_group_permit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fragment_enter_volunteer_details_radio_group_permit" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background_rounded_grey"
+            android:fontFamily="@font/montserrat"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/selected"
+            android:textColor="@android:color/black"
+            android:visibility="@{  (viewModel.localPathToIdentitySelectedImage!=null &amp;&amp; !viewModel.localPathToIdentitySelectedImage.isEmpty())?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_enter_volunteer_details_two_btn_add_id_proof_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fragment_enter_volunteer_details_two_btn_add_id_proof_photo" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background_rounded_grey"
+            android:fontFamily="@font/montserrat"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/selected"
+            android:textColor="@android:color/black"
+            android:visibility="@{ (viewModel.volunteer.faceShieldData.hasData &amp;&amp; (viewModel.localPathToFaceMaskSelectedImage!=null &amp;&amp; !viewModel.localPathToFaceMaskSelectedImage.isEmpty()))?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_enter_volunteer_details_radio_group_face_shield"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fragment_enter_volunteer_details_radio_group_face_shield" />
+
+        <Button
+            android:id="@+id/button"
+            style="@style/BottomBlueButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->viewModel.dispatchSubmitData()}"
+            android:text="@string/finish_registration"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="4dp"
+            android:adjustViewBounds="true"
+            android:visibility="@{ (viewModel.volunteer.permitData.hasData &amp;&amp; (viewModel.localPathToPermitSelectedImage!=null &amp;&amp; !viewModel.localPathToPermitSelectedImage.isEmpty()))?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView5"
+            app:layout_constraintEnd_toStartOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="@+id/textView5"
+            app:srcCompat="@drawable/ic_check" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="4dp"
+            android:adjustViewBounds="true"
+            android:visibility="@{  (viewModel.localPathToIdentitySelectedImage!=null &amp;&amp; !viewModel.localPathToIdentitySelectedImage.isEmpty())?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView10"
+            app:layout_constraintEnd_toStartOf="@+id/textView10"
+            app:layout_constraintTop_toTopOf="@+id/textView10"
+            app:srcCompat="@drawable/ic_check" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="4dp"
+            android:adjustViewBounds="true"
+            android:visibility="@{ (viewModel.volunteer.faceShieldData.hasData &amp;&amp; (viewModel.localPathToFaceMaskSelectedImage!=null &amp;&amp; !viewModel.localPathToFaceMaskSelectedImage.isEmpty()))?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView11"
+            app:layout_constraintEnd_toStartOf="@+id/textView11"
+            app:layout_constraintTop_toTopOf="@+id/textView11"
+            app:srcCompat="@drawable/ic_check" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
