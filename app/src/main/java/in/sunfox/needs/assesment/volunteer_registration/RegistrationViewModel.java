@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.concurrent.CompletableFuture;
 
+import in.sunfox.needs.assesment.R;
 import in.sunfox.needs.assesment.authentication.model.Volunteer;
 import in.sunfox.needs.assesment.helper.FirebaseAuthenticationHelper;
 import in.sunfox.needs.assesment.helper.FirebaseFirestoreHelper;
@@ -195,20 +196,20 @@ public class RegistrationViewModel extends BaseObservableViewModel {
 
     public void submitData(BaseActivity baseActivity) {
         Log.d(TAG, "submitData: ");
-        baseActivity.showLoading("Initializing submit request");
+        baseActivity.showLoading(baseActivity.getString(R.string.initialising_submit_request));
         String registeredVolunteerPhoneNumber = FirebaseAuthenticationHelper.getLoggedInUser().getPhoneNumber();
         if (localPathToIdentitySelectedImage == null || localPathToIdentitySelectedImage.isEmpty()) {
             baseActivity.dismissLoading();
-            baseActivity.showError("Please add an identity proof to submit registration request");
+            baseActivity.showError(baseActivity.getString(R.string.error_add_identity_proof));
         } else if (volunteer.getFaceShieldData().isHasData() && localPathToFaceMaskSelectedImage != null && !localPathToFaceMaskSelectedImage.isEmpty()) {
             String remoteUrlPath = "images/" + registeredVolunteerPhoneNumber + "_face_mask.jpg";
             try {
-                baseActivity.setLoadingMessage("Uploading face mask data...");
+                baseActivity.setLoadingMessage(baseActivity.getString(R.string.uploading_face_mask_data));
                 FirebaseStorageHelper.uploadFile(new File(localPathToFaceMaskSelectedImage), remoteUrlPath, e -> {
                     Log.d(TAG, "submitData: FaceMaskImageuploadFailed: " + e.getMessage());
                 }, taskSnapshot -> {
                     Log.d(TAG, "submitData: FaceMaskImageuploadSuccess");
-                    baseActivity.setLoadingMessage("Face mask data upload successful");
+                    baseActivity.setLoadingMessage(baseActivity.getString(R.string.face_mask_data_upload_successful));
                     volunteer.getFaceShieldData().setDataResourcePath(remoteUrlPath);
                     uploadIdentityData(registeredVolunteerPhoneNumber, baseActivity);
                 });
@@ -224,36 +225,37 @@ public class RegistrationViewModel extends BaseObservableViewModel {
         if (volunteer.getPermitData().isHasData() && localPathToPermitSelectedImage != null && !localPathToPermitSelectedImage.isEmpty()) {
             String remoteUrlPath = "images/" + registeredVolunteerPhoneNumber + "_permit.jpg";
             try {
-                baseActivity.setLoadingMessage("Uploading permit data...");
+                baseActivity.setLoadingMessage(baseActivity.getString(R.string.uploading_permit_data));
                 FirebaseStorageHelper.uploadFile(new File(localPathToPermitSelectedImage), remoteUrlPath, e -> {
                     Log.d(TAG, "submitData: PermitImageuploadFailed: " + e.getMessage());
                 }, taskSnapshot -> {
-                    baseActivity.setLoadingMessage("Permit data uploaded.");
+                    baseActivity.setLoadingMessage(baseActivity.getString(R.string.permit_data_uploaded));
                     Log.d(TAG, "submitData: PermitImageUploadSuccess");
                     volunteer.getPermitData().setDataResourcePath(remoteUrlPath);
-                    baseActivity.setLoadingMessage("Sending volunteer details to server...");
+                    baseActivity.setLoadingMessage(baseActivity.getString(R.string.sending_volunteer_details_to_server));
                     FirebaseFirestoreHelper.addVolunteer(volunteer, FirebaseAuthenticationHelper.getLoggedInUser().getPhoneNumber(), o -> {
                         Log.d(TAG, "submitData: Success");
-                        baseActivity.setLoadingMessage("Volunteer details sent.");
+                        baseActivity.setLoadingMessage(baseActivity.getString(R.string.volunteer_details_sent));
                         baseActivity.dismissLoading();
                         ((VolunteerRegistrationActivity) baseActivity).openDashboard();
                     }, e -> {
-                        Log.d(TAG, "submitData: Failed: " + e.getMessage());
-
+                        Log.d(TAG, "submitData: Failed: " + e.getLocalizedMessage());
+                        baseActivity.showError(baseActivity.getString(R.string.error) + e.getLocalizedMessage());
                     });
                 });
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         } else {
-            baseActivity.setLoadingMessage("Sending volunteer details to server...");
+            baseActivity.setLoadingMessage(baseActivity.getString(R.string.sending_volunteer_details_to_server));
             FirebaseFirestoreHelper.addVolunteer(volunteer, FirebaseAuthenticationHelper.getLoggedInUser().getPhoneNumber(), o -> {
                 Log.d(TAG, "submitData: Success");
-                baseActivity.setLoadingMessage("Volunteer details sent.");
+                baseActivity.setLoadingMessage(baseActivity.getString(R.string.volunteer_details_sent));
                 baseActivity.dismissLoading();
                 ((VolunteerRegistrationActivity) baseActivity).openDashboard();
             }, e -> {
                 Log.d(TAG, "submitData: Failed: " + e.getMessage());
+                baseActivity.showError(baseActivity.getString(R.string.error) + e.getLocalizedMessage());
 
             });
         }
@@ -263,11 +265,11 @@ public class RegistrationViewModel extends BaseObservableViewModel {
         if (localPathToIdentitySelectedImage != null && !localPathToIdentitySelectedImage.isEmpty()) {
             String remoteUrlPath = "images/" + registeredVolunteerPhoneNumber + "_id_proof.jpg";
             try {
-                baseActivity.setLoadingMessage("Uploading identity data...");
+                baseActivity.setLoadingMessage(baseActivity.getString(R.string.uploading_identity_data));
                 FirebaseStorageHelper.uploadFile(new File(localPathToIdentitySelectedImage), remoteUrlPath, e -> {
                     Log.d(TAG, "submitData: IdentityImageuploadFailed: " + e.getMessage());
                 }, taskSnapshot -> {
-                    baseActivity.setLoadingMessage("Identity data uploaded.");
+                    baseActivity.setLoadingMessage(baseActivity.getString(R.string.identity_data_uploaded));
                     Log.d(TAG, "submitData: IdentityImageUploadSuccess");
                     volunteer.setIdentityProofResourcePath(remoteUrlPath);
                     Log.d(TAG, "submitData: Setting img proof resource: " + volunteer.getIdentityProofResourcePath());

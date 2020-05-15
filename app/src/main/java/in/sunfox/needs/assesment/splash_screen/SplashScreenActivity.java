@@ -8,6 +8,8 @@ import android.os.Handler;
 
 import in.sunfox.needs.assesment.R;
 import in.sunfox.needs.assesment.authentication.AuthenticationActivity;
+import in.sunfox.needs.assesment.change_language.ChangeLanguageActivity;
+import in.sunfox.needs.assesment.helper.SharedPreferenceHelper;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -18,7 +20,14 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         new Handler().postDelayed(
                 () -> {
-                    startActivity(new Intent(SplashScreenActivity.this, AuthenticationActivity.class));
+                    Intent intent = null;
+                    if (SharedPreferenceHelper.hasLanguageChosen(SplashScreenActivity.this)) {
+                        intent = new Intent(SplashScreenActivity.this, AuthenticationActivity.class);
+                    } else {
+                        intent = new Intent(SplashScreenActivity.this, ChangeLanguageActivity.class);
+
+                    }
+                    startActivity(intent);
                     finish();
                 },
                 1500);

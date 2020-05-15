@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/montserrat"
-            android:text="No Pending Tasks yet."
+            android:text="@string/no_pending_tasks_yet"
             android:textColor="@android:color/black"
             android:visibility="@{viewModel.pendingTasksFetched &amp;&amp; viewModel.pendingTasks.size() ==0 ? View.VISIBLE:View.GONE}"
             app:layout_constraintEnd_toEndOf="@+id/imageView25"

@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Add Beneficiary"
+        android:text="@string/add_beneficiary"
         app:layout_constraintBottom_toBottomOf="@+id/imageView23"
         app:layout_constraintStart_toEndOf="@+id/imageView23"
         app:layout_constraintTop_toTopOf="@+id/imageView23" />

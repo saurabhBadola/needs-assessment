@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Random;
 
 import in.sunfox.needs.assesment.authentication.AuthenticationActivity;
+import in.sunfox.needs.assesment.beneficiary.Beneficiary;
 import in.sunfox.needs.assesment.beneficiary.BeneficiaryActivity;
 import in.sunfox.needs.assesment.dashboard.BeneficiaryListFragment;
 import in.sunfox.needs.assesment.dashboard.DashboardViewModel;
@@ -62,6 +63,12 @@ public class DashboardActivity extends BaseActivity {
     public void logoutUser() {
         finish();
         startActivity(new Intent(this, AuthenticationActivity.class));
+    }
+
+    public void openBeneficiaryDetails(Beneficiary beneficiary) {
+        Intent intent = new Intent(this, BeneficiaryDetailsActivity.class);
+        intent.putExtra(BeneficiaryDetailsActivity.EXTRA_BENEFICIARY, beneficiary);
+        startActivity(intent);
     }
 
 

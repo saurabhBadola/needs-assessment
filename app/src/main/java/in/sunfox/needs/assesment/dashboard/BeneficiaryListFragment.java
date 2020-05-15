@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -52,12 +53,18 @@ public class BeneficiaryListFragment extends Fragment {
     public static class BeneficiaryListAdapter extends RecyclerView.Adapter<BeneficiaryListAdapter.ViewHolder> {
 
         private List<Beneficiary> beneficiaries;
+        private DashboardViewModel viewModel;
+
+        public BeneficiaryListAdapter(DashboardViewModel viewModel) {
+            this.viewModel = viewModel;
+        }
 
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
             ItemBeneficiaryListBinding beneficiaryListBinding = DataBindingUtil.inflate(layoutInflater, R.layout.item_beneficiary_list, parent, false);
+            beneficiaryListBinding.setViewmodel(viewModel);
             return new ViewHolder(beneficiaryListBinding);
         }
 

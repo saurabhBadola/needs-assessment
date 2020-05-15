@@ -9,9 +9,16 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
+import in.sunfox.needs.assesment.helper.LocaleHelper;
+
 public abstract class BaseActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
+    }
 
 
     @Override

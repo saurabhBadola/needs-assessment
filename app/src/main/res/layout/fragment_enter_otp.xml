@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:hint="Enter 6-digit OTP"
+            android:hint="@string/enter_6_digit_otp"
             android:paddingBottom="8dp"
             android:paddingTop="8dp"
             android:paddingStart="16dp"

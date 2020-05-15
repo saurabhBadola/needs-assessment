@@ -55,16 +55,15 @@
             app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
 
         <TextView
-            android:fontFamily="@font/montserrat"
-            android:textColor="@android:color/black"
             android:id="@+id/textView86"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="No Tasks Yet."
+            android:fontFamily="@font/montserrat"
+            android:text="@string/no_completed_tasks_tet"
+            android:textColor="@android:color/black"
             android:visibility="@{viewModel.completedTasksFetched &amp;&amp; viewModel.completedTasks.size() ==0 ? View.VISIBLE:View.GONE}"
             app:layout_constraintEnd_toEndOf="@+id/imageView24"
-            app:layout_constraintHorizontal_bias="0.264"
             app:layout_constraintStart_toStartOf="@+id/imageView24"
             app:layout_constraintTop_toBottomOf="@+id/imageView24" />
 

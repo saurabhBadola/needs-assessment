@@ -2,25 +2,26 @@ package in.sunfox.needs.assesment.beneficiary;
 
 import android.util.Log;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import static in.sunfox.needs.assesment.volunteer_registration.VolunteerRegistrationActivity.TAG;
 
-public class Beneficiary {
+public class Beneficiary implements Serializable {
 
-    private enum Employment {
-        SELF_EMPLOYED,
-        UNEMPLOYED,
-        GOVERNMENT_SECTOR,
-        PRIVATE_SECTOR
-    }
-
-    private enum DataType {
-        AUDIO,
-        FILE,
-        TEXT
-    }
+//    private enum Employment {
+//        SELF_EMPLOYED,
+//        UNEMPLOYED,
+//        GOVERNMENT_SECTOR,
+//        PRIVATE_SECTOR
+//    }
+//
+//    private enum DataType {
+//        AUDIO,
+//        FILE,
+//        TEXT
+//    }
 
 
     private String name;
@@ -177,12 +178,17 @@ public class Beneficiary {
 //    }
 
 
-    public static class FamilyMember {
+    public static class FamilyMember implements Serializable {
 
         private String name;
         private String employment;
 
        public FamilyMember() {
+        }
+
+        public FamilyMember(String name, String employment) {
+            this.name = name;
+            this.employment = employment;
         }
 
         public String getEmployment() {

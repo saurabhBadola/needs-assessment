@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="viewmodel"
+            type="in.sunfox.needs.assesment.dashboard.DashboardViewModel" />
+
+        <variable
             name="beneficiary"
             type="in.sunfox.needs.assesment.beneficiary.Beneficiary" />
     </data>
@@ -17,7 +21,8 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="2dp"
-        android:background="@drawable/background_rounded_strokes_grey">
+        android:background="@drawable/background_rounded_strokes_grey"
+        android:onClick="@{()->viewmodel.dispatchShowBeneficiaryDetails(beneficiary)}">
 
         <TextView
             android:id="@+id/textView30"

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import in.sunfox.needs.assesment.R;
 import in.sunfox.needs.assesment.helper.FirebaseAuthenticationHelper;
 import in.sunfox.needs.assesment.helper.FirebaseFirestoreHelper;
 import in.sunfox.needs.assesment.helper.FirebaseStorageHelper;
@@ -77,7 +78,7 @@ public class BeneficiaryViewModel extends BaseObservableViewModel {
                 super.handle(baseActivity);
                 try {
                     if (localPathForBeneficiaryIdentityProofPhoto == null || localPathForBeneficiaryIdentityProofPhoto.isEmpty())
-                        baseActivity.showError("Please select an identity proof");
+                        baseActivity.showError(baseActivity.getString(R.string.select_identity_proof));
                     else submitData(baseActivity);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
@@ -135,7 +136,7 @@ public class BeneficiaryViewModel extends BaseObservableViewModel {
     }
 
     private void submitData(BaseActivity activity) throws FileNotFoundException {
-        activity.showLoading("Adding beneficiary. Please wait...");
+        activity.showLoading(activity.getString(R.string.adding_beneficiary_please_wait));
         String volunteerPhone = FirebaseAuthenticationHelper.getLoggedInUser().getPhoneNumber();
         String remoteUrl = "images/" + volunteerPhone + "_" + beneficiary.getName().replaceAll(" ", "_") + "_identity.jpg";
         FirebaseStorageHelper.uploadFile(new File(localPathForBeneficiaryIdentityProofPhoto), remoteUrl, e -> {
@@ -146,11 +147,11 @@ public class BeneficiaryViewModel extends BaseObservableViewModel {
             beneficiary.setReferrerVolunteerPhoneNumber(volunteerPhone);
             FirebaseFirestoreHelper.addBeneficiary(beneficiary, documentReference -> {
                 activity.dismissLoading();
-                activity.showToast("Successfully added beneficiary!!!");
+                activity.showToast(activity.getString(R.string.successfully_added_beneficiary));
                 activity.finish();
             }, e -> {
                 activity.dismissLoading();
-                activity.showError("Error: " + e.getMessage());
+                activity.showError(activity.getString(R.string.error) + e.getLocalizedMessage());
             });
         });
     }

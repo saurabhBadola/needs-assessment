@@ -14,20 +14,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".dashboard.DoTaskActivity">
+        <activity android:name=".change_language.ChangeLanguageActivity">
 
         </activity>
-        <activity android:name=".TestActivity"></activity>
-        <activity android:name=".DashboardActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".beneficiary.BeneficiaryActivity" android:screenOrientation="portrait" />
-        <activity android:name=".splash_screen.SplashScreenActivity" android:screenOrientation="portrait">
+        <activity android:name=".BeneficiaryDetailsActivity">
+
+        </activity>
+        <activity android:name=".dashboard.DoTaskActivity" />
+        <activity android:name=".TestActivity" />
+        <activity
+            android:name=".DashboardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".beneficiary.BeneficiaryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".splash_screen.SplashScreenActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".volunteer_registration.VolunteerRegistrationActivity" android:screenOrientation="portrait" />
+        <activity
+            android:name=".volunteer_registration.VolunteerRegistrationActivity"
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -39,7 +51,9 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".authentication.AuthenticationActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name=".authentication.AuthenticationActivity"
+            android:screenOrientation="portrait" />
 
         <service android:name=".volunteer_registration.SyncLocalCacheService" />
     </application>

@@ -30,7 +30,7 @@
             android:id="@+id/button11"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="submit"
+            android:text="@string/submit"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Perform Task"
+            android:text="@string/perform_task"
             app:layout_constraintBottom_toBottomOf="@+id/imageView20"
             app:layout_constraintStart_toEndOf="@+id/imageView20"
             app:layout_constraintTop_toTopOf="@+id/imageView20" />
@@ -108,7 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Beneficiary Address"
+                    android:text="@string/address"
                     app:layout_constraintStart_toStartOf="@+id/textView69"
                     app:layout_constraintTop_toBottomOf="@+id/textView69" />
 
@@ -155,7 +155,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Panchayat"
+                    android:text="@string/gram_panchayat"
                     app:layout_constraintStart_toStartOf="@+id/textView75"
                     app:layout_constraintTop_toBottomOf="@+id/textView75"
                     tools:visibility="visible" />
@@ -213,7 +213,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="40dp"
                     android:layout_marginEnd="16dp"
-                    android:text="Enter the details below:"
+                    android:text="@string/enter_the_details_below"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -330,7 +330,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/montserrat"
-                    android:text="Beneficiary Information:"
+                    android:text="@string/beneficiary_information"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
                     android:textStyle="bold"

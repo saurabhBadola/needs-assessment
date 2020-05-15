@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 public class SharedPreferenceHelper {
     private final static String PREF_FILE = "PREF";
     private final static String KEY_VOLUNTEER_REGISTERED = "KEY_VOLUNTEER_REGISTERED";
+    private final static String KEY_LANGUAGE_CHOSEN = "KEY_LANGUAGE_CHOSEN";
 
     /**
      * Set a string shared preference
@@ -89,5 +90,13 @@ public class SharedPreferenceHelper {
 
     public static void setVolunteerRegistered(Context context, boolean isRegistered) {
         SharedPreferenceHelper.setSharedPreferenceBoolean(context, KEY_VOLUNTEER_REGISTERED, isRegistered);
+    }
+
+    public static boolean hasLanguageChosen(Context context) {
+        return SharedPreferenceHelper.getSharedPreferenceBoolean(context, KEY_LANGUAGE_CHOSEN, false);
+    }
+
+    public static void setLanguageChosen(Context context, boolean isChosen) {
+        SharedPreferenceHelper.setSharedPreferenceBoolean(context, KEY_LANGUAGE_CHOSEN, isChosen);
     }
 }

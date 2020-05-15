@@ -17,9 +17,11 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.auth.PhoneAuthProvider.OnVerificationStateChangedCallbacks;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import in.sunfox.needs.assesment.BR;
+import in.sunfox.needs.assesment.R;
 import in.sunfox.needs.assesment.authentication.model.Volunteer;
 import in.sunfox.needs.assesment.viewmodel_com.BaseActivity;
 import in.sunfox.needs.assesment.viewmodel_com.BaseObservableViewModel;
@@ -142,7 +144,7 @@ public class AuthenticationViewModel extends BaseObservableViewModel {
                     activity.dismissLoading();
                 }
             };
-            activity.showLoading("Sending OTP. Please wait...");
+            activity.showLoading(activity.getString(R.string.sending_otp_please_wait));
 
             if (isResendingOtp)
                 PhoneAuthProvider.getInstance().verifyPhoneNumber("+91" + phone, 60, TimeUnit.SECONDS, baseActivity, callbacks, token);
@@ -170,10 +172,10 @@ public class AuthenticationViewModel extends BaseObservableViewModel {
                         if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                             // The verification code entered was invalid
                             Log.w(TAG, "INVALID TOKEN", task.getException());
-                            activity.showError("Invalid OTP. Please check the OTP or resend OTP.");
+                            activity.showError(activity.getString(R.string.invalid_otp_error));
 
                         } else {
-                            activity.showError(task.getException().getMessage());
+                            activity.showError(Objects.requireNonNull(task.getException()).getLocalizedMessage());
                         }
                     }
                 }

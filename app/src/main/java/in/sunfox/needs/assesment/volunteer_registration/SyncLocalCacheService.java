@@ -58,43 +58,6 @@ public class SyncLocalCacheService extends Service {
 
         @Override
         public void run() {
-//            CollectionReference reference = FirebaseFirestore.getInstance().collection("pincodes");
-//            reference.addSnapshotListener((querySnapshot, e) -> {
-//                if(querySnapshot!=null) {
-//                    ArrayList<String> pinCodes = new ArrayList<>();
-//                    for (DocumentSnapshot snapshot : querySnapshot.getDocuments()){
-//                        Log.d(TAG, "onChange: "+snapshot.getString("name"));
-//                        pinCodes.add(snapshot.getString("name"));
-//                    }
-//                    LocalCacheHelper.updatePinCodesList(context, pinCodes);
-//                }
-//            });
-//
-//            reference = FirebaseFirestore.getInstance().collection("mandals");
-//            reference.addSnapshotListener((querySnapshot, e) -> {
-//                if(querySnapshot!=null) {
-//                    ArrayList<String> mandals = new ArrayList<>();
-//                    for (DocumentSnapshot snapshot : querySnapshot.getDocuments()){
-//                        Log.d(TAG, "onChange: "+snapshot.getString("name"));
-//                        mandals.add(snapshot.getString("name"));
-//                    }
-//                    LocalCacheHelper.updateMandalsList(context, mandals);
-//                }
-//            });
-//
-//            reference = FirebaseFirestore.getInstance().collection("panchayats");
-//            reference.addSnapshotListener((querySnapshot, e) -> {
-//                if(querySnapshot!=null) {
-//                    ArrayList<String> panchayats = new ArrayList<>();
-//                    for (DocumentSnapshot snapshot : querySnapshot.getDocuments()){
-//                        Log.d(TAG, "onChange: "+snapshot.getString("name"));
-//                        panchayats.add(snapshot.getString("name"));
-//                    }
-//                    LocalCacheHelper.updatePanchayatsList(context, panchayats);
-//
-//                }
-//            });
-
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference ref = database.getReference("pincodes");
             ArrayList<String> pinCodes = new ArrayList<>();

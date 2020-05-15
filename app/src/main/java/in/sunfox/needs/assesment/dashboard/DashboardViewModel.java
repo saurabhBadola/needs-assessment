@@ -114,6 +114,16 @@ public class DashboardViewModel extends BaseObservableViewModel {
         });
     }
 
+    public void dispatchShowBeneficiaryDetails(Beneficiary beneficiary) {
+        postViewModelEvent(new ViewModelEvent() {
+            @Override
+            public void handle(BaseActivity baseActivity) {
+                super.handle(baseActivity);
+                ((DashboardActivity) baseActivity).openBeneficiaryDetails(beneficiary);
+            }
+        });
+    }
+
     public List<Beneficiary> getBeneficiaries() {
         return beneficiaries;
     }
